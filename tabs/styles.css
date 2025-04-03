@@ -218,6 +218,10 @@ About
   grid-template-rows: auto 1fr;
 }
 
+.ui-tab-container + .ui-tab-container {
+  margin-top: 30px;
+}
+
 .ui-tab-list {
   display: flex;
   position: relative;

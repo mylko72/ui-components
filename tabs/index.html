@@ -6,6 +6,7 @@
     <title>Tabs</title>
     <!-- styles -->
     <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="./TabUi.js" defer></script>    
   </head>
   <body>
     <section class="section">
@@ -47,12 +48,33 @@
                 </div>
             </div>
 
+            <div class="ui-tab-container" data-role="tab">
+              <ul class="ui-tab-list" role="tablist">
+                  <li class="tab-list active">
+                      <button id="tab-11" class="tab-btn" role="tab" aria-selected="true" aria-controls="tab-panel-11">tablist 11</button>
+                  </li>
+                  <li class="tab-list">
+                      <button id="tab-12" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-panel-12" tabindex="-1">tablist 12</button>
+                  </li>
+                  <li class="tab-list">
+                      <button id="tab-13" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-panel-13" tabindex="-1">tablist 13</button>
+                  </li>
+              </ul>
+              <div class="ui-tab-contents">
+                  <div id="tab-panel-11" class="tab-contents" role="tabpanel" aria-labelledby="tab-11" tabindex="0">
+                      <p>tab contents 11</p>
+                  </div>
+                  <div id="tab-panel-12" class="tab-contents" role="tabpanel" aria-labelledby="tab-12" tabindex="0" hidden="true">
+                      <p>tab contents 12</p>
+                  </div>
+                  <div id="tab-panel-13" class="tab-contents" role="tabpanel" aria-labelledby="tab-13" tabindex="0" hidden="true">
+                      <p>tab contents 13</p>
+                  </div>
+              </div>
+          </div>
+
         </article>
       </div>
     </section>
-    <!-- javascript -->
-    <script src="./TabUi.js" type="module"></script>
-    <script>
-    </script>
   </body>
 </html>

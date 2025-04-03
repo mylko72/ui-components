@@ -1,13 +1,18 @@
-// import UI from './UI';
+import UI from '../UI.js';
+import { getElement } from '../Function.js';
 // import {scrollTo, wrapInnerScroll} from './simple.ui';
 
-class Tab {
+class Tab extends UI {
     defaults = {
        scroll: false
     }
+    currentTarget = null;
+    targetTabWrap = null;
+    targetTabListWrap = null;
+    targetPanelWrap = null;
 
     constructor(el, options){
-    //    super('expand', el);
+       super('Tab', el);
        
        this.init(el, options);
     }
@@ -27,37 +32,25 @@ class Tab {
     }
     
     attachEvents(){
-       this.$el.on(`click${this.eventId}`, '.ui-expand-btn', (e) => {
-          e.preventDefault();
-          
-          const $this = $(e.currentTarget);
-          if($this.parents('.ui-expand').hasClass('open')){
-             this.close($this);
-             $this.attr('aria-expanded', 'false');
-          }else{
-             this.open($this);
-             $this.attr('aria-expanded', 'true');            
-          }
-       });
+      this.el.addEventListener('click', this.tabClickEvt);
     }
-    
-    open(target){
-       target.parents('.ui-expand').addClass('open');
-       this.scrollToExpandEl();
+
+    initEvt(e){
+      this.currentTarget = e.target.tagName;
+      this.currentTarget === 'BUTTON' || 'A'
+        ? (this.currentTarget = e.target)
+        : (this.currentTarget = e.target.closest('button') || e.target.closest('a'));
+      this.targetTabWrap = this.currentTarget.closest('[data-role="tab"]');
+      this.targetTabListWrap = this.targetTabWrap.querySelector('[role="tablist"]');
+      this.targetPanelWrap = targetTabWrap.querySelector('.ui-tab-contents');  
     }
-    
-    close(target){
-       target.parents('.ui-expand').removeClass('open');
+
+    tabClickEvt(){
+      this.initEvt();
     }
-    
-    scrollToExpandEl(){
-       if(this.defaults.scroll === true){
-          scrollTo(this.$el);
-       }
-    }
-    
+            
     detachEvents(){
-       this.$el.off(this.eventId);
+      //  this.$el.off(this.eventId);
     }
     
     destroy(){
@@ -66,8 +59,14 @@ class Tab {
 }
 
 const tabGroups = document.querySelectorAll('[data-role="tab"]');
-console.log('tabGroups', tabGroups);
-document.addEventListener("DOMContentLoaded", () => {
-    const tab = new Tab("myModal");  
-    console.log('tab', tab);
-  });
+tabGroups.length && [...tabGroups].forEach((tabWrapper) => {
+   const tabBtns = tabWrapper.querySelectorAll('[role="tab"]');
+   tabBtns.length && [...tabBtns].forEach((tabBtn) => {
+      const options = tabBtn.dataset;
+      const tab = new Tab(tabBtn, options);
+      console.log('tab', tab);
+   });
+})
+
+
+
