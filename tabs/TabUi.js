@@ -152,6 +152,3 @@ tabGroups.length && [...tabGroups].forEach((tabWrapper) => {
    const tab = new Tab(tabWrapper, options);
    console.log('tab', tab);
 })
-
-
-
