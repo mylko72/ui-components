@@ -11,7 +11,7 @@
   <body>
     <section class="section">
       <div class="title">
-        <h2>about</h2>
+        <h2>Tab</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
           aperiam!
@@ -38,6 +38,31 @@
                 <div class="ui-tab-contents">
                     <div id="tab-panel-01" class="tab-contents" role="tabpanel" aria-labelledby="tab-01" tabindex="0">
                         <p>tab contents 01</p>
+
+                        <div class="ui-tab-container" data-role="tab">
+                          <ul class="ui-tab-list" role="tablist">
+                            <li class="tab-list active">
+                              <button id="tab-01-01" class="tab-btn" role="tab" aria-selected="true" aria-controls="tab-panel-01-01">tablist 01</button>
+                            </li>
+                            <li class="tab-list">
+                              <button id="tab-02-01" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-panel-02-01" tabindex="-1">tablist 02</button>
+                            </li>
+                            <li class="tab-list">
+                              <button id="tab-03-01" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-panel-03-01" tabindex="-1">tablist 03</button>
+                            </li>
+                          </ul>
+                          <div class="ui-tab-contents">
+                            <div id="tab-panel-01-01" class="tab-contents" role="tabpanel" aria-labelledby="tab-01-01" tabindex="0">
+                              <p>tab contents 01</p>
+                            </div>
+                            <div id="tab-panel-02-01" class="tab-contents" role="tabpanel" aria-labelledby="tab-02-01" tabindex="0" hidden="true">
+                              <p>tab contents 02</p>
+                            </div>
+                            <div id="tab-panel-03-01" class="tab-contents" role="tabpanel" aria-labelledby="tab-03-01" tabindex="0" hidden="true">
+                              <p>tab contents 03</p>
+                            </div>
+                          </div>
+                        </div>                        
                     </div>
                     <div id="tab-panel-02" class="tab-contents" role="tabpanel" aria-labelledby="tab-02" tabindex="0" hidden="true">
                         <p>tab contents 02</p>
