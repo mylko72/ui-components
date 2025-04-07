@@ -1,6 +1,5 @@
 import UI from '../UI.js';
 import { getElement } from '../Function.js';
-// import {scrollTo, wrapInnerScroll} from './simple.ui';
 
 class Tab extends UI {
    defaults = {

@@ -180,7 +180,7 @@ main {
 }
 /*
 =============== 
-About
+Content
 ===============
 */
 .title {
@@ -192,26 +192,26 @@ About
   margin: 0 auto;
 }
 
-.about-img {
+.tab-img {
   margin-bottom: 2rem;
 }
-.about-img img {
+.tab-img img {
   border-radius: var(--radius);
   object-fit: cover;
   height: 20rem;
 }
 @media screen and (min-width: 992px) {
-  .about-img {
+  .tab-img {
     margin-bottom: 0;
   }
 
-  .about-center {
+  .tab-center {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
   }
 }
-.about {
+.ui-content {
   /* background: var(--clr-white); */
   border-radius: var(--radius);
   display: grid;
