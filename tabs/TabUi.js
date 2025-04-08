@@ -5,6 +5,8 @@ class Tab extends UI {
    defaults = {
        scroll: false
    }
+
+   el = null;
    currentTarget = null;
    tabBtns = null;
    targetTabWrap = null;
