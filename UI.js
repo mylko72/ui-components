@@ -9,6 +9,11 @@ class UI {
     uiId;
     eventId;
     selector;
+    focusEl = [];
+    popupAll = null;
+    popupCloseBtnAll = null;
+    popupDepth = 0;
+    popupDimmed = null; 
 
     /**
      * UI 클래스를 상속받은 UI는 super(name, el)을 해줘야 한다.
